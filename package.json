@@ -1,0 +1,35 @@
+{
+  "name": "less2stylus",
+  "version": "0.0.0",
+  "description": "convert LESS to Stylus",
+  "main": "index.js",
+  "dependencies": {
+    "less": "1.4.2",
+    "underscore": "~1.5.1"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "mocha": "~1.9.0",
+    "semver": "~1.1.4"
+  },
+  "bin": {
+    "less2stylus": "less2stylus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andreypopp/less2stylus.git"
+  },
+  "homepage": "https://github.com/andreypopp/less2stylus",
+  "keywords": [
+    "less",
+    "stylus",
+    "converter",
+    "transform"
+  ],
+  "author": {
+    "name": "Andrey Popp",
+    "email": "8mayday@gmail.com",
+    "url": "http://andreypopp.com"
+  },
+  "license": "MIT"
+}
