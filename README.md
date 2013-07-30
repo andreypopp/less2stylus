@@ -10,6 +10,14 @@ Convert LESS to Stylus by parsing LESS sources and traversing resulting AST.
 
     % less2stylus styles.less > styles.styl
 
+## Bootstrap translation
+
+Currently there's a single [pull request][1] for Bootstrap to be accepted for
+`less2stylus` to be capable of translating it as-is. This pull request fixes out
+of order variable and mixin declarations in a few places.
+
+[1]: https://github.com/twbs/bootstrap/pull/8726
+
 ## Notes
 
   * every mixin with no params or all params having default values will have
