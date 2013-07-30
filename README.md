@@ -12,11 +12,7 @@ Convert LESS to Stylus by parsing LESS sources and traversing resulting AST.
 
 ## Bootstrap translation
 
-Currently there's a single [pull request][1] for Bootstrap to be accepted for
-`less2stylus` to be capable of translating it as-is. This pull request fixes out
-of order variable and mixin declarations in a few places.
-
-[1]: https://github.com/twbs/bootstrap/pull/8726
+Bootstrap 3.0 can be translated as-is.
 
 ## Notes
 
