@@ -13,8 +13,8 @@ defineVisitor = function(base, props) {
   return extend(Object.create(base), props);
 };
 
-genVar = function() {
-  return "var" + (crypto.randomBytes(12).toString('hex'));
+genVar = function(features) {
+  return "var" + (crypto.createHash('md5').update(features).digest('hex'));
 };
 
 renderValue = function(node, options) {
@@ -389,7 +389,7 @@ treeVisitor = defineVisitor(baseVisitor, {
       unquote: true
     });
     if (/@{/.exec(features)) {
-      mediaVar = genVar();
+      mediaVar = genVar(features);
       this.p("" + mediaVar + " = \"" + (toUnquoted(features)) + "\"");
       this.p("@media " + mediaVar);
     } else {

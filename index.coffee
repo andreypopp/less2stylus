@@ -8,8 +8,8 @@ crypto = require 'crypto'
 defineVisitor = (base, props) ->
   extend Object.create(base), props
 
-genVar = ->
-  "var#{crypto.randomBytes(12).toString('hex')}"
+genVar = (features) ->
+  "var#{crypto.createHash('md5').update(features).digest('hex')}"
 
 renderValue = (node, options) ->
   options = extend {}, options
@@ -305,7 +305,7 @@ treeVisitor = defineVisitor baseVisitor,
     options.visitDeeper = false
     features = renderValue(node.features, unquote: true)
     if /@{/.exec features
-      mediaVar = genVar()
+      mediaVar = genVar(features)
       @p "#{mediaVar} = \"#{toUnquoted(features)}\""
       @p "@media #{mediaVar}"
     else
